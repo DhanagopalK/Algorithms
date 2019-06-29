@@ -1,0 +1,28 @@
+/* To find root value between two range values */
+class SquareFunc {
+    public static int solution(int A, int B) {
+        // write your code in Java SE 8
+    	int count=0,finalcount=0;
+    	for(int i=A;i<=B;i++)
+    	{
+    		Double d = Math.sqrt(i);
+    		if(d-d.intValue()==0)
+    		{
+    			//System.out.println("i value "+i);
+    			while(d-d.intValue()==0)
+    			{
+    				d = Math.sqrt(d);
+    				count++;
+    			}
+    			if(count>finalcount)
+    				finalcount = count;
+    			count=0;
+    		}
+    	}
+    	return finalcount;
+    }
+    public static void main(String[] args)
+    {
+    	System.out.println("func "+solution(6000,7000));
+    	
+    }
